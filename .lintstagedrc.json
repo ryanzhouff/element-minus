@@ -1,0 +1,6 @@
+{
+  "src/**/*.{vue,ts,tsx,js}": [
+    "prettier --ignore-path .prettierignore --write src/**/*.{vue,ts,tsx}",
+    "eslint --fix --ignore-path .eslintignore src/**/*.{vue,ts,tsx}"
+  ]
+}
