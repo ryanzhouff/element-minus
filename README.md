@@ -28,3 +28,6 @@ defineOptions({
 
 ## 测试
 测试库@vue/test-utils 2 for vue3
+
+## Icon
+Icon使用FontAwesomeFont

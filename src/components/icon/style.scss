@@ -1,0 +1,17 @@
+.v-icon {
+  --v-icon-color: inherit; // 颜色继承自父元素
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--v-icon-color);
+  font-size: inherit;
+}
+
+// 根据不同的类型设置不同的颜色
+@each $color_name in primary, info, success, warning, danger {
+  .v-icon--#{$color_name} {
+    --v-icon-color: var(--v-color-#{$color_name});
+  }
+}
