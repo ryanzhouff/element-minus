@@ -1,0 +1,76 @@
+:root {
+  /* colors */
+  --v-color-white: #ffffff;
+  --v-color-black: #000000;
+  $colors: (
+    primary: #409eff,
+    success: #67c23a,
+    warning: #e6a23c,
+    danger: #f56c6c,
+    info: #909399
+  );
+
+  // 计算颜色值
+  @each $color_name, $color in $colors {
+    --v-color-#{$color_name}: #{$color};
+    --v-color-#{$color_name}-light-8: #{ mix(#fff, $color, 80%) };
+    --v-color-#{$color_name}-dark-2: #{ mix(#000, $color, 20%) };
+    // light的颜色值取3、5、7、9
+    $i: 3;
+    @while $i <= 9 {
+      --v-color-#{$color_name}-light-#{$i}: #{mix(#fff, $color, ($i * 10%))};
+      $i: $i + 2;
+    };
+  }
+
+  --v-bg-color: #ffffff;
+  --v-bg-color-page: #f2f3f5;
+  --v-bg-color-overlay: #ffffff;
+  --v-text-color-primary: #303133;
+  --v-text-color-regular: #606266;
+  --v-text-color-secondary: #909399;
+  --v-text-color-placeholder: #a8abb2;
+  --v-text-color-disabled: #c0c4cc;
+  --v-border-color: #dcdfe6;
+  --v-border-color-light: #e4e7ed;
+  --v-border-color-lighter: #ebeef5;
+  --v-border-color-extra-light: #f2f6fc;
+  --v-border-color-dark: #d4d7de;
+  --v-border-color-darker: #cdd0d6;
+  --v-fill-color: #f0f2f5;
+  --v-fill-color-light: #f5f7fa;
+  --v-fill-color-lighter: #fafafa;
+  --v-fill-color-extra-light: #fafcff;
+  --v-fill-color-dark: #ebedf0;
+  --v-fill-color-darker: #e6e8eb;
+  --v-fill-color-blank: #ffffff;
+
+  /* border */
+  --v-border-width: 1px;
+  --v-border-style: solid;
+  --v-border-color-hover: var(--v-text-color-disabled);
+  --v-border: var(--v-border-width) var(--v-border-style) var(--v-border-color);
+  --v-border-radius-base: 4px;
+  --v-border-radius-small: 2px;
+  --v-border-radius-round: 20px;
+  --v-border-radius-circle: 100%;
+
+  /*font*/
+  --v-font-size-extra-large: 20px;
+  --v-font-size-large: 18px;
+  --v-font-size-medium: 16px;
+  --v-font-size-base: 14px;
+  --v-font-size-small: 13px;
+  --v-font-size-extra-small: 12px;
+  --v-font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial, sans-serif;
+  --v-font-weight-primary: 500;
+
+  /*disabled*/
+  --v-disabled-bg-color: var(--v-fill-color-light);
+  --v-disabled-text-color: var(--v-text-color-placeholder);
+  --v-disabled-border-color: var(--v-border-color-light);
+
+  /*animation*/
+  --v-transition-duration: .3s;
+  --v-transition-duration-fast: .2s;
+}

@@ -1,52 +1,30 @@
 # element-minus
 
-This template should help get you started developing with Vue 3 in Vite.
+### Button
+组件名在script-setup语法中无法添加，有两种解决方法：
+第一、单独再创建一个script
+```vue
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+export default defineComponent({
+  name: 'VButton'
+});
+</script>
+```
+第二、使用`defineOptions`
+```ts
+defineOptions({
+  name: 'VButton'
+});
 ```
 
-### Compile and Hot-Reload for Development
+#### 色彩系统
+参考antd色彩系统和中国传统色彩
 
-```sh
-npm run dev
-```
+基础色板
+中性色板
+功能色 成功、失败等
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## 测试
+测试库@vue/test-utils 2 for vue3
