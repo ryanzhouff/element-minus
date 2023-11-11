@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Icon from '@/components/icon/Icon.vue';
+import Button from '@/components/button/Button.vue';
 </script>
 
 <template>
   <div>
-    <Icon icon="arrow-up" type="danger" color="green" spin></Icon>
+    <Button type="primary">Button</Button>
   </div>
 </template>
 

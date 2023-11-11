@@ -1,5 +1,3 @@
-@import "@/styles/index.scss";
-
 // 基本思路通过CSS变量覆盖不同状态下的样式
 .v-button {
   --v-button-font-weight: var(--v-font-weight-primary);

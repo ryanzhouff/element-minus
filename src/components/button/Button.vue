@@ -36,6 +36,4 @@ defineExpose({
   </button>
 </template>
 
-<style lang="scss" scoped>
-@import './styles.scss';
-</style>
+<style lang="scss" scoped></style>
